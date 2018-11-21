@@ -9,6 +9,11 @@ class Api::PlacesController < ApplicationController
   end
 
   def create
-    @place = Place.new(name: params[:name])
+    @place = Place.new(name: params[:name], address: params[:address])
+    if @place.save!
+      puts "\n\n\tNEW PLACE ADDED: #{@place}"
+      render json: @place
+    end
+
   end
 end

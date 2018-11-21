@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   namespace 'api' do
     #CRUD
     get '/places'  => 'places#index'
-    post '/places'  => 'places#index'
+    post '/places'  => 'places#create'
   end
 end
